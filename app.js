@@ -37,7 +37,7 @@ mongoose.set('strictQuery', true); //ignore mongoose warning
 mongoose.connect(uri)
   .then(() => console.log('ok'))
   .catch((err) => console.log(err));
-
+ 
 // 1B. config url path of routers
 app.use('/users', usersRouter);
 app.use('/toys', toyRouter);
