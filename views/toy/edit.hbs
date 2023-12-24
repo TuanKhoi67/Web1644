@@ -3,9 +3,10 @@
    Toy name: <input type="text" name="name" id="" required value="{{ toy.name }}">
    <br><br>
    Toy image: <input type="url" name="image" id="" required value="{{ toy.image }}">
-   <img src="{{ toy.image }}" alt="" width="100" height="100">
+   <br >
+   <img style="margin: 10px;" src="{{ toy.image }}" alt="" width="250" height="300">
    <br> <br>
-   Toy brand: <br>
+   Toy brand: 
    <select name="brand">
       {{#each brands }}
       <option value="{{ _id }}"> {{ name }}</option>
@@ -29,5 +30,5 @@
    <input type="radio" name="type" value="Chibi" checked="true"> Chibi
    {{/equal}}
    <br><br>
-   <input type="submit" value="Edit">
+   <input class="btn btn-warning" type="submit" value="Edit">
 </form>
