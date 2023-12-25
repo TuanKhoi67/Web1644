@@ -2,11 +2,14 @@ var express = require('express');
 var router = express.Router();
 var ToysModel = require('../models/ToysModel');
 var BrandModels = require('../models/BrandModels');
+var ColorModels = require('../models/ColorModels');
+
 
 
 /* GET home page. */
 router.get('/', async (req, res) => {
   var toys = await ToysModel.find({}).populate('brand');
+  
   res.render('index', { toys });
 })
 

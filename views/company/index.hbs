@@ -1,0 +1,31 @@
+<div class="ms-auto d-flex navbar " style="padding-right: 30px ;">
+   <a class="btn btn-info" href="/company/add">Add new toy</a>
+   
+</div>
+
+<table class="table table-info">
+   <tr>
+      <th>name</th>
+      <th>address</th>
+      <th>image</th>
+      <th></th>
+      <th colspan="2">Menu</th>
+   </tr>
+   {{#each companys }}
+   <tr>
+      <td>{{ name }}</td>
+      <td>{{ address }}</td>
+      
+      <td>
+         <img src="{{ image }}" alt="" width="200" height="250">
+      </td>
+
+      <td>
+         <a class="btn btn-warning" href="/companys/edit/{{ _id }}">Edit</a>
+      </td>
+      <td>
+         <a class="btn btn-danger" href="/companys/delete/{{ _id }}" onclick="return confirm('Are you sure to delete this toy ?');">Delete</a>
+      </td>
+   </tr>
+   {{/each}}
+</table>

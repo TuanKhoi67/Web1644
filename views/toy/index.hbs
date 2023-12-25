@@ -10,7 +10,10 @@
       <th>Toy name</th>
       <th>Toy type</th>
       <th>Toy brand</th>
+      <th>Toy color</th>
       <th>Toy image</th>
+      <th>Toy Country</th>
+      
       <th colspan="2">Menu</th>
    </tr>
    {{#each toys }}
@@ -18,9 +21,12 @@
       <td>{{ name }}</td>
       <td>{{ type }}</td>
       <td>{{ brand.name }}</td>
+      <td>{{ name }}</td>
+      
       <td>
          <img src="{{ image }}" alt="" width="200" height="250">
       </td>
+      <td>{{ country }}</td>
       <td>
          <a class="btn btn-warning" href="/toys/edit/{{ _id }}">Edit</a>
       </td>

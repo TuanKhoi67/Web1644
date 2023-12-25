@@ -8,6 +8,9 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var toyRouter = require('./routes/toy');
 var brandRouter = require('./routes/brand');
+var colorRouter = require('./routes/color');
+var countryRouter = require('./routes/country');
+var companyRouter = require('./routes/company');
 
 var app = express();
 
@@ -32,7 +35,7 @@ app.use('/users', usersRouter);
 
 // 2. config 'mongoose' module
 var mongoose = require('mongoose');
-var uri = "mongodb+srv://khoihvtgch210919:Tuankhoi6723@cluster0.zznk45r.mongodb.net/Figure";
+var uri = "mongodb+srv://khoihvtgch210919:Tuankhoi6723@cluster0.zznk45r.mongodb.net/cloud_demo";
 mongoose.set('strictQuery', true); //ignore mongoose warning
 mongoose.connect(uri)
   .then(() => console.log('ok'))
@@ -42,6 +45,9 @@ mongoose.connect(uri)
 app.use('/users', usersRouter);
 app.use('/toys', toyRouter);
 app.use('/brand', brandRouter);
+app.use('/color', colorRouter);
+app.use('/country', countryRouter);
+app.use('/company', companyRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -16,5 +16,18 @@
       {{/each}}
    </select>
    <br><br>
+   Toy color: <br>
+   <select name="color">
+      {{#each colors }}
+      <option value="{{ _id }}"> {{ name }}</option>
+      {{/each}}
+   </select>
+   <br>
+   <select name="country">
+      {{#each countrys }}
+      <option value="{{ _id }}"> {{ country }}</option>
+      {{/each}}
+   </select>
+   <br>
    <input type="submit" value="Add">
 </form>

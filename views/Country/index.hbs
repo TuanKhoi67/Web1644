@@ -1,0 +1,24 @@
+<a class="btn btn-info" href="/country/add">Add new country</a>
+<a class="btn btn-danger" href="/country/deleteall">Delete all</a>
+<br><br>
+<table class="table table-secondary">
+   <tr>
+      <th>country name</th>
+      <th></th>
+      <th colspan="3">Menu</th>
+   </tr>
+   {{#each companys }}
+   <tr>
+      
+      <td>{{ country }}</td>
+      <td>
+         <a class="btn btn-warning" href="/country/edit/{{ _id }}">Edit</a>
+      </td>
+      <td>
+         <a class="btn btn-danger" href="/country/delete/{{ _id }}"
+         onclick="return confirm('Are you sure to delete this country ?');"
+         >Delete</a>
+      </td>
+   </tr>
+   {{/each}}
+</table>

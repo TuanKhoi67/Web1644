@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var ToysModel = require('../models/ToysModel');
 var BrandModels = require('../models/BrandModels');
+var ColorModels = require('../models/ColorModels');
+var CountryModels = require('../models/CountryModels');
 
 //URL: localhost:3001/toy
 router.get('/', async (req, res) => {
@@ -11,7 +13,9 @@ router.get('/', async (req, res) => {
 
 router.get('/add', async (req, res) => {
    var brands = await BrandModels.find({});
-   res.render('toy/add', { brands });
+   var colors = await ColorModels.find({});
+   var countrys = await CountryModels.find({});
+   res.render('toy/add', { brands, colors, countrys });
 })
 
 router.post('/add', async (req, res) => {
@@ -29,7 +33,9 @@ router.get('/edit/:id', async (req, res) => {
    var id = req.params.id;
    var toy = await ToysModel.findById(id);
    var brands = await BrandModels.find({});
-   res.render('toy/edit', { toy, brands });
+   var colors = await ColorModels.find({});
+   var countrys = await CountryModels.find({});
+   res.render('toy/edit', { toy, brands, colors, countrys });
 })
 
 router.post('/edit/:id', async (req, res) => {
